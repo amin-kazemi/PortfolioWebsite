@@ -1,0 +1,558 @@
+@import 'config';
+@import 'utilities';
+
+// General Settings
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Dosis', sans-serif;
+  line-height: 1.6;
+  background: #fff;
+}
+
+a{
+  text-decoration: none;
+  color: $dark-color;
+}
+
+ul{
+  list-style: none;
+}
+
+img{
+  width: 100%;
+}
+
+#logo {
+  width: 150px;
+  color: #fff;
+  text-transform: uppercase;
+}
+// --------------------------------------------------------------------
+// Header
+
+#header{
+  // Header Home
+  &-home{
+    background: $bg-image;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    height: 100vh;
+    color: #fff;
+  
+    
+  
+    .header-content{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+  
+      & h1{
+        font-size: 4rem;
+        line-height: 1.2;
+      }
+  
+      & .btn{
+        margin-top: 2rem;
+      }
+    }
+  
+  } 
+  // Header Inner
+  &-inner{
+    background: $bg-image;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 30%;
+    height: 5.5rem;
+    color: #fff;
+    border-bottom: 3px solid $main-color;
+  }
+}
+
+
+
+// Navbar
+#main-nav{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+
+  ul {
+    display: flex;
+  }
+
+  li{
+    padding: 1rem 1.5rem;
+  }
+  
+  a{
+    color: #fff;
+    border-bottom: 3px transparent solid;
+    padding-bottom: 0.5rem;
+    transition: border-color 0.5s;
+
+    &:hover{
+      border-color: $medium-color;
+    }
+    &.current{
+      border-color: $main-color;
+    }
+  }
+}
+
+
+// Section A: Specialize
+#home-a{
+  .specials{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 1rem;
+    margin-top: 3rem;
+  }
+  i{
+    color: $main-color;
+  }
+}
+
+
+// Section B: Stats
+#home-b{
+  .status{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+    .status-title,
+    .status-number{
+      font-size: 1.5rem;
+      line-height: 2;
+      font-weight: bold;
+    }
+
+    div:nth-child(odd){
+    background: $light-color;
+    padding: 3rem;
+
+    }
+    div:nth-child(even){
+    background: $medium-color;
+    padding: 3rem;
+
+    }
+  }
+}
+
+// Section C: Process
+#home-c{
+  .process{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 1.5rem;
+    text-align: center;
+
+    
+
+    &-icon{
+      background: $dark-color;
+      border-radius: 50%;
+      color: #fff;
+      line-height: 80px;
+      position: relative;
+      transition: all 1s;
+      padding: 2rem;
+ 
+    }
+
+    &-step{
+      background: $main-color;
+      border-radius: 50%;
+      position: absolute;
+      padding: 1rem;
+      font-size: 28px;
+      line-height: 15px;
+      top: 0;
+      right: 0;
+      transition: all 1s;
+    }
+
+    &-icon:hover{
+      transform: scale(1.1);
+      background: $main-color;
+
+    .process-step{
+      background: $dark-color;
+      }
+    }
+  }
+}
+
+// About
+#about{
+  //About A
+  &-a{
+    display: grid;
+    grid-template-columns:repeat(3,1fr) ;
+    grid-gap: 1.3rem;
+    img{
+      width: 400px;
+    }
+    .about-info{
+      grid-column: 2 / span 2;
+      background: $light-color;
+      text-align: center;
+      padding: 1rem;
+      border-left: 3px solid $main-color;
+
+    }
+  }
+  // About B
+  &-b{
+
+    .awards{
+      display: grid;
+     grid-template-columns: repeat(3,1fr); 
+     grid-gap: 1.5rem;
+     text-align: center;
+
+     i{
+       color: $main-color;
+       line-height: 1.8;
+     }
+    }  
+  }
+
+  // About C
+  &-c{
+    background: $dark-color;
+    color: #fff;
+
+    .progress{
+      overflow: hidden;
+      height: 20px;
+      background: $medium-color;
+      border-radius: 5px;
+      margin-bottom: 0.6rem;
+
+      div{
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        background: $main-color;
+      }
+    }
+  }
+
+  // About D
+  &-d{
+    background: $light-color;
+    padding: 2rem;
+    opacity: 0.8;
+    
+    div{
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      grid-gap: 1rem;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    
+    }
+
+    img{
+      width: 130px;
+    }
+  }
+
+  // About E
+  &-e {
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0.5rem;
+
+      ul {
+        list-style: none;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      p {
+        border: 1px solid $medium-color;
+        border-radius: 5px;
+        padding: 0.5rem;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+// Secound way of styling About section by using grid-template-area
+// #about{
+
+//   // About A
+//   &-a{
+//     display: grid;
+//     grid-template-areas: 
+//     'about-img about-info about-info';
+//     grid-gap: 1.2rem;
+
+//     .about-img{
+//       width: 400px;
+//       grid-area: about-img;
+//     }
+  
+//     .about-info{
+//       grid-area: about-info;
+//       background: $light-color;
+//       text-align: center;
+//       padding: 1rem;
+//       border-left: 3px solid $main-color;
+//    }
+//  }
+
+// //  About B
+//  &-b{
+//    .awards{
+//       display: grid;
+//       grid-template-areas: 
+//       'aw1 aw2 aw3';
+//       grid-gap: 1.2rem;
+//       text-align: center;
+//     }
+//     .aw1{
+//       grid-area: aw1;
+
+//     }
+//     .aw2{
+//       grid-area: aw2;
+//     }
+//     .aw3{
+//       grid-area: aw3;
+//     }
+//   }
+//     .aw1 i,.aw2 i,.aw3 i{
+//       color: $main-color;
+//       line-height: 1.8;
+//     }
+// }
+
+// Work            which i dont understant it at all
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.item {
+  position: relative;
+  background: $main-color;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    background: inherit;
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
+    transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+  // Bring in main color overlay
+  &:hover:after {
+    transform: scale(2) translateX(0) translateY(0) rotate(-28deg);
+  }
+
+  // Scale image on hover
+  &:hover &-image {
+    transform: scale(1.2);
+  }
+
+  // Bring in text on hover
+  &:hover &-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &-image {
+    height: auto;
+    transform: translateZ(0);
+    display: block;
+    transition: transform 750ms cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+  &-image:before {
+    content: '';
+    display: block;
+    padding-top: 75%;
+    overflow: hidden;
+  }
+
+  &-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    line-height: 0;
+  }
+
+  &-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    text-align: center;
+    z-index: 1;
+    color: #fff;
+    transform: translateY(-20%);
+    transition: opacity 500ms cubic-bezier(0.2, 1, 0.3, 1),
+      transform 500ms cubic-bezier(0.2, 1, 0.3, 1);
+    transition-delay: 300ms;
+  }
+
+  &-text-wrap {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-text-title {
+    font-size: 2rem;
+    padding: 0 1rem;
+    margin: 5px 0 0 0;
+  }
+
+  &-text-category {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    margin: 0;
+  }
+}
+
+// Contact
+#contact{
+  &-a{
+
+    .form-content{
+      display: grid;
+      grid-template-areas:
+      'name email'
+      'subject phone'
+      'message message';
+      grid-gap: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .name{
+      grid-area: name;
+      padding: 0.5rem 1rem;
+    }
+    .email{
+      grid-area: email;
+      padding: 0.5rem 1rem;
+    }
+    .subject{
+      grid-area: subject;
+      padding: 0.5rem 1rem;
+    }
+    .phone{
+      grid-area: phone;
+      padding: 0.5rem 1rem;
+    }
+    .message{
+      grid-area: message;
+      height: 100px;
+      margin-bottom: 4rem;
+      padding: 0.5rem;
+    }
+
+    .btn-mid{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn{
+      width:50%;
+      font-size: 1rem;
+    }
+  }
+
+  &-b{
+    background: $dark-color;
+
+    .contact-info{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+  &-c{
+    background: $main-color;
+
+    h1{
+      color: #fff;
+      text-align: center;
+      font-size: 4rem;
+    }
+  }
+}
+
+
+// Footer
+#main-footer{
+  background: $dark-color;
+  color: #fff;
+
+  .footer-content{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    text-align: center;
+    align-items: center;
+
+    .social i{
+      margin-right: 1.5rem;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      padding: 0.75rem;
+
+    }
+    .social i:hover{
+      background: $main-color;
+    }
+  }
+  
+ }
+
+
+
+
+//  Media Queries
+@import 'media';
+
